@@ -41,7 +41,7 @@ export default function Questions() {
       </Box>
       <Grid container spacing={2}>
         {questions.map((question) => (
-          <Grid xs={12} item sm={4} id={question._id}>
+          <Grid xs={12} item sm={4} key={question._id}>
             <Card>
               <CardContent>
                 <Typography variant="h3">{question.title}</Typography>
