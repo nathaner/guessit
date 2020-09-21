@@ -1,10 +1,10 @@
 import React from "react";
 
 import Grid from "@material-ui/core/Grid";
-import { Link as MuiLink } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import Container from "@material-ui/core/Container";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -28,22 +28,22 @@ const useStyles = makeStyles((theme) => ({
 export default function Footer() {
   const classes = useStyles();
   return (
-    <div class={classes.wrapper}>
+    <div className={classes.wrapper}>
       <Container maxWidth="sm" className={classes.container}>
         <Grid component="footer" container className={classes.footer}>
           <Grid item xs={4}>
-            <Link>
-              <MuiLink classes={classes.link}>About</MuiLink>
+            <Link className={classes.link} component={RouterLink} to="/">
+              About
             </Link>
           </Grid>
           <Grid item xs={4}>
-            <Link>
-              <MuiLink classes={classes.link}>Source</MuiLink>
+            <Link className={classes.link} component={RouterLink} to="/">
+              Source
             </Link>
           </Grid>
           <Grid item xs={4}>
-            <Link>
-              <MuiLink classes={classes.link}>Contact</MuiLink>
+            <Link className={classes.link} component={RouterLink} to="/">
+              Contact
             </Link>
           </Grid>
         </Grid>

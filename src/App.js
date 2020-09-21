@@ -29,7 +29,7 @@ function App() {
           <Route path="/sentences/new" component={NewSentences} />
           <Route path="/sentences" component={Sentences} />
           <Route path="/pairs/new" component={NewPairs} />
-          <Route path="/pairs" component={Questions} />
+          <Route path="/pairs" component={Pairs} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/contact" component={Contact} />

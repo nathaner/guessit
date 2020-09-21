@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import Typography from "@material-ui/core/Typography";
-import CardContent from "@material-ui/core/CardContent";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Box from "@material-ui/core/Box";
@@ -11,7 +8,6 @@ import Grid from "@material-ui/core/Grid";
 import Layout from "./Layout";
 import { Link as RouterLink } from "react-router-dom";
 import PageHeading from "./common/PageHeading";
-import { theme } from "../theme";
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,19 +24,21 @@ const set = {
   title: "English basics",
   author: "Sarah",
   questions: [
-    { question: "Who's the french president?", answer: "Emmanuel Macron" },
-    { question: "How old is Queen Elizabeth II?", answer: "Emmanuel Macron" },
+    { question: "Who's the french president?", answer: "Emmanuel Macron." },
+    { question: "How old is Queen Elizabeth II?", answer: "94 years old." },
     {
       question: "What are the 4 nations composing the UK?",
-      answer: "Emmanuel Macron",
+      answer: "England, Wales, Scotland and Northern Ireland.",
     },
     {
       question: 'What\'s the difference between "here" and "there"?',
-      answer: "Emmanuel Macron",
+      answer:
+        "Here refers to where the speaker is whereas there refers to a the place where the listener or another person is.",
     },
     {
       question: 'What\'s the difference between "this" and "that"?',
-      answer: "Emmanuel Macron",
+      answer:
+        "This refers to someone/something near in place/time and that is used to point out something.",
     },
   ],
 };
@@ -55,7 +53,6 @@ function SkipButton({ ...rest }) {
 
 function CorrectWrongButtons({ onCorrect, onWrong }) {
   const classes = useStyles();
-  console.log(theme.palette);
   return (
     <ButtonGroup
       variant="contained"
@@ -121,8 +118,6 @@ export default function QuestionsSet() {
     if (score > 0) setScore(score - 1);
     handleNext();
   };
-
-  const renderSkipButton = () => {};
 
   if (currentQuestion > set.questions.length)
     return (
