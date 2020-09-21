@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PageHeading({ children }) {
+export default function PageHeading({ children, ...rest }) {
   const classes = useStyles();
 
   return (

@@ -6,6 +6,7 @@ import { theme } from "./theme";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import Questions from "./components/Questions";
 import NewQuestions from "./components/NewQuestions";
+import QuestionsSet from "./components/QuestionsSet";
 import Sentences from "./components/Sentences";
 import NewSentences from "./components/NewSentences";
 import Pairs from "./components/Pairs";
@@ -23,7 +24,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Switch>
           <Route path="/questions/new" component={NewQuestions} />
-          <Route path="/questions/:id" component={Questions} />
+          <Route path="/questions/:id" component={QuestionsSet} />
           <Route path="/questions" component={Questions} />
           <Route path="/sentences/new" component={NewSentences} />
           <Route path="/sentences" component={Sentences} />

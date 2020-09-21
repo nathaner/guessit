@@ -48,7 +48,12 @@ export default function Questions() {
                 <Typography color="textSecondary">{question.author}</Typography>
               </CardContent>
               <CardActions>
-                <Button variant="outlined" color="primary">
+                <Button
+                  component={RouterLink}
+                  to="/questions/1"
+                  variant="outlined"
+                  color="primary"
+                >
                   Play
                 </Button>
               </CardActions>

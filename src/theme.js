@@ -7,7 +7,6 @@ let theme = createMuiTheme({
     primary: {
       main: "#105FD2",
     },
-    success: green,
     footerBackground: "#2D2D2D",
   },
   typography: {
