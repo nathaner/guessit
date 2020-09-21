@@ -21,7 +21,9 @@ export default function Layout({ children }) {
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
-      <Container>{children}</Container>
+      <Container component="main" maxWidth="md">
+        {children}
+      </Container>
       <Footer />
     </Fragment>
   );

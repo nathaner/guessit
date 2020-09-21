@@ -49,7 +49,7 @@ export default function Home() {
               variant="outlined"
               color="primary"
               className={classes.word}
-              href="/"
+              href="/questions"
             >
               Play
             </Button>
