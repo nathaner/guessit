@@ -3,10 +3,10 @@ import React from "react";
 
 import Layout from "./Layout";
 
-export default function Register() {
+export default function NewSentences() {
   return (
     <Layout>
-      <Typography variant="h2">Register</Typography>
+      <Typography variant="h2">New Sentences set</Typography>
     </Layout>
   );
 }

@@ -7,6 +7,7 @@ import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Layout from "./Layout";
+import { Link } from "react-router-dom";
 
 const questions = [
   { _id: 1, title: "English basics", author: "Sarah" },
@@ -27,9 +28,11 @@ export default function Questions() {
             <Typography variant="h2">Questions</Typography>
           </Grid>
           <Grid item>
-            <Button variant="contained" color="primary">
-              Create new
-            </Button>
+            <Link to="/questions/new">
+              <Button variant="contained" color="primary">
+                Create new
+              </Button>
+            </Link>
           </Grid>
         </Grid>
       </Box>
