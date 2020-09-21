@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Home from "./components/Home";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { theme } from "./theme";
 import { CssBaseline, ThemeProvider } from "@material-ui/core";
 import Questions from "./components/Questions";
@@ -14,6 +14,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Switch>
           <Route path="/questions/new" component={NewQuestions} />
+          <Route path="/questions/:id" component={Questions} />
           <Route path="/questions" component={Questions} />
           <Route path="/sentences/new" component={NewSentences} />
           <Route path="/sentences" component={Sentences} />
@@ -31,7 +33,9 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />
-          <Route path="/" component={Home} />
+          <Route path="/not-found" component={NotFound} />
+          <Route path="/" exact component={Home} />
+          <Redirect to="/not-found" />
         </Switch>
       </ThemeProvider>
     </Fragment>

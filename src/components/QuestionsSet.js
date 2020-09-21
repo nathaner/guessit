@@ -8,20 +8,34 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Layout from "./Layout";
 import { Link as RouterLink } from "react-router-dom";
+import PageHeading from "./common/PageHeading";
 
-const questions = [
-  { _id: 1, title: "English basics", author: "Sarah" },
-  { _id: 2, title: "Verbs", author: "Sarah" },
-  { _id: 3, title: "Animals", author: "Didier" },
-  { _id: 4, title: "Computers", author: "Sarah" },
-  { _id: 5, title: "Social networks", author: "Nathan" },
-  { _id: 6, title: "School", author: "Mathilde" },
-  { _id: 7, title: "Food", author: "Sarah" },
-];
+const set = {
+  _id: 1,
+  title: "English basics",
+  author: "Sarah",
+  questions: [
+    { question: "Who's the french president?", answer: "Emmanuel Macron" },
+    { question: "How old is Queen Elizabeth II?", answer: "Emmanuel Macron" },
+    {
+      question: "What are the 4 nations composing the UK?",
+      answer: "Emmanuel Macron",
+    },
+    {
+      question: 'What\'s the difference between "here" and "there"?',
+      answer: "Emmanuel Macron",
+    },
+    {
+      question: 'What\'s the difference between "this" and "that"?',
+      answer: "Emmanuel Macron",
+    },
+  ],
+};
 
-export default function Questions() {
+export default function QuestionsSet() {
   return (
     <Layout>
+      <PageHeading></PageHeading>
       <Box my={2}>
         <Grid container alignItems="center" spacing={4}>
           <Grid item>

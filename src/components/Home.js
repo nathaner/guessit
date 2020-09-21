@@ -5,6 +5,7 @@ import { theme } from "../theme";
 import { Typography } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { green, purple } from "@material-ui/core/colors";
@@ -13,7 +14,6 @@ import Footer from "./Footer";
 import Logo from "./Logo";
 import { Link as RouterLink } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 // import Nav from "./Nav";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,10 +49,11 @@ export default function Home() {
           </Typography>
           <Box>
             <Button
+              component={RouterLink}
+              to="/questions"
               variant="outlined"
               color="primary"
               className={classes.word}
-              href="/questions"
             >
               Play
             </Button>
@@ -74,15 +75,15 @@ export default function Home() {
             were
           </Button>
           <Box>
-            <Link to="/sentences">
-              <Button
-                variant="outlined"
-                color="primary"
-                className={classes.word}
-              >
-                Play
-              </Button>
-            </Link>
+            <Button
+              component={RouterLink}
+              to="/sentences"
+              variant="outlined"
+              color="primary"
+              className={classes.word}
+            >
+              Play
+            </Button>
           </Box>
         </Paper>
 
@@ -106,10 +107,11 @@ export default function Home() {
           </Button>
           <Box>
             <Button
+              component={RouterLink}
+              to="/pairs"
               variant="outlined"
               color="primary"
               className={classes.word}
-              href="/"
             >
               Play
             </Button>
@@ -121,7 +123,7 @@ export default function Home() {
           </Typography>
         </Box>
         <Grid container>
-          <Grid item align="center" xs={6}>
+          <Grid item align="center" xs>
             <Button
               component={RouterLink}
               to="/login"
@@ -131,7 +133,7 @@ export default function Home() {
               Login
             </Button>
           </Grid>
-          <Grid item align="center" xs={6}>
+          <Grid item align="center" xs>
             <Button
               component={RouterLink}
               to="/register"
