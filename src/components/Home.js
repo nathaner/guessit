@@ -11,11 +11,19 @@ import { green, purple } from "@material-ui/core/colors";
 import { palette } from "@material-ui/system";
 import Footer from "./Footer";
 import Logo from "./Logo";
+import { Link as RouterLink } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 // import Nav from "./Nav";
 
 const useStyles = makeStyles((theme) => ({
+  moto: {
+    boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
+    color: "white",
+    textAlign: "center",
+    padding: theme.spacing(6, 0),
+    backgroundColor: theme.palette.primary.main,
+  },
   paper: {
     margin: theme.spacing(2, 0),
   },
@@ -29,12 +37,7 @@ export default function Home() {
   return (
     <Fragment>
       <Logo />
-      <Box
-        bgcolor={theme.palette.primary.main}
-        color="white"
-        align="center"
-        paddingY={theme.spacing(1)}
-      >
+      <Box className={classes.moto}>
         <Typography variant="h2">The new way to rehearse (for free)</Typography>
       </Box>
       <Container maxWidth="md">
@@ -119,12 +122,22 @@ export default function Home() {
         </Box>
         <Grid container>
           <Grid item align="center" xs={6}>
-            <Button variant="contained" color="primary">
+            <Button
+              component={RouterLink}
+              to="/login"
+              variant="contained"
+              color="primary"
+            >
               Login
             </Button>
           </Grid>
           <Grid item align="center" xs={6}>
-            <Button variant="outlined" color="primary">
+            <Button
+              component={RouterLink}
+              to="/register"
+              variant="outlined"
+              color="primary"
+            >
               Register
             </Button>
           </Grid>
