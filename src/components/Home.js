@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import Footer from "./Footer";
 import Logo from "./Logo";
 import { Link as RouterLink } from "react-router-dom";
+import ButtonSuccess from "./common/ButtonSuccess";
 
 // import Nav from "./Nav";
 
@@ -18,7 +19,12 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     textAlign: "center",
     padding: theme.spacing(6, 0),
+    marginBottom: theme.spacing(3),
     backgroundColor: theme.palette.primary.main,
+    transform: "skewY(-1.22deg)",
+  },
+  motoText: {
+    transform: "skewY(1.22deg)",
   },
   paper: {
     margin: theme.spacing(2, 0),
@@ -34,7 +40,9 @@ export default function Home() {
     <Fragment>
       <Logo />
       <Box className={classes.moto}>
-        <Typography variant="h2">The new way to rehearse (for free)</Typography>
+        <Typography className={classes.motoText} variant="h2">
+          The new way to rehearse (for free)
+        </Typography>
       </Box>
       <Container maxWidth="md">
         <Paper elevation={3} className={classes.paper}>
@@ -61,15 +69,11 @@ export default function Home() {
           <Button variant="contained" color="primary" className={classes.word}>
             doing?
           </Button>
-          <Button variant="contained" color="primary" className={classes.word}>
-            What
-          </Button>
+          <ButtonSuccess>What</ButtonSuccess>
           <Button variant="contained" color="primary" className={classes.word}>
             you
           </Button>
-          <Button variant="contained" color="primary" className={classes.word}>
-            were
-          </Button>
+          <ButtonSuccess className={classes.word}>were</ButtonSuccess>
           <Box>
             <Button
               component={RouterLink}
@@ -88,7 +92,7 @@ export default function Home() {
           <Button variant="contained" color="primary" className={classes.word}>
             Fromage
           </Button>
-          <Button variant="contained">Tomate</Button>
+          <ButtonSuccess>Tomate</ButtonSuccess>
           <Button variant="contained" color="primary" className={classes.word}>
             Bicycle
           </Button>
@@ -98,9 +102,7 @@ export default function Home() {
           <Button variant="contained" color="primary" className={classes.word}>
             Vélo
           </Button>
-          <Button variant="contained" color="primary" className={classes.word}>
-            Tomate
-          </Button>
+          <ButtonSuccess>Tomate</ButtonSuccess>
           <Box>
             <Button
               component={RouterLink}

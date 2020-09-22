@@ -20,7 +20,7 @@ export default function CategoryHeading({ children, newHref }) {
             variant="contained"
             color="primary"
           >
-            Create newdazd
+            Create new
           </Button>
         </Grid>
       </Grid>

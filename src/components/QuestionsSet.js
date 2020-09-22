@@ -9,15 +9,17 @@ import Layout from "./Layout";
 import { Link as RouterLink } from "react-router-dom";
 import PageHeading from "./common/PageHeading";
 import { makeStyles } from "@material-ui/core";
+import ButtonSuccess from "./common/ButtonSuccess";
+import ButtonError from "./common/ButtonError";
 
-const useStyles = makeStyles((theme) => ({
-  btnSuccess: {
-    backgroundColor: theme.palette.success.main,
-  },
-  btnError: {
-    backgroundColor: theme.palette.error.main,
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   btnSuccess: {
+//     backgroundColor: theme.palette.success.main,
+//   },
+//   btnError: {
+//     backgroundColor: theme.palette.error.main,
+//   },
+// }));
 
 const set = {
   _id: 1,
@@ -52,19 +54,15 @@ function SkipButton({ ...rest }) {
 }
 
 function CorrectWrongButtons({ onCorrect, onWrong }) {
-  const classes = useStyles();
+  //   const classes = useStyles();
   return (
     <ButtonGroup
       variant="contained"
       color="primary"
       aria-label="contained primary button group"
     >
-      <Button className={classes.btnSuccess} onClick={() => onCorrect()}>
-        Correct
-      </Button>
-      <Button className={classes.btnError} onClick={() => onWrong()}>
-        Wrong
-      </Button>
+      <ButtonSuccess onClick={() => onCorrect()}>Correct</ButtonSuccess>
+      <ButtonError onClick={() => onWrong()}>Wrong</ButtonError>
     </ButtonGroup>
   );
 }
