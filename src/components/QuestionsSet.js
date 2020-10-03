@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
-import Box from "@material-ui/core/Box";
-import Chip from "@material-ui/core/Chip";
-import Grid from "@material-ui/core/Grid";
-import Layout from "./Layout";
-import { Link as RouterLink } from "react-router-dom";
-import PageHeading from "./common/PageHeading";
-import { makeStyles } from "@material-ui/core";
-import ButtonSuccess from "./common/ButtonSuccess";
-import ButtonError from "./common/ButtonError";
+import React, { useState } from 'react';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Box from '@material-ui/core/Box';
+import Chip from '@material-ui/core/Chip';
+import Grid from '@material-ui/core/Grid';
+import Layout from './Layout';
+import { Link as RouterLink } from 'react-router-dom';
+import PageHeading from './common/PageHeading';
+// import { makeStyles } from "@material-ui/core";
+import ButtonSuccess from './common/ButtonSuccess';
+import ButtonError from './common/ButtonError';
 
 // const useStyles = makeStyles((theme) => ({
 //   btnSuccess: {
@@ -23,24 +23,24 @@ import ButtonError from "./common/ButtonError";
 
 const set = {
   _id: 1,
-  title: "English basics",
-  author: "Sarah",
+  title: 'English basics',
+  author: 'Sarah',
   questions: [
-    { question: "Who's the french president?", answer: "Emmanuel Macron." },
-    { question: "How old is Queen Elizabeth II?", answer: "94 years old." },
+    { question: "Who's the french president?", answer: 'Emmanuel Macron.' },
+    { question: 'How old is Queen Elizabeth II?', answer: '94 years old.' },
     {
-      question: "What are the 4 nations composing the UK?",
-      answer: "England, Wales, Scotland and Northern Ireland.",
+      question: 'What are the 4 nations composing the UK?',
+      answer: 'England, Wales, Scotland and Northern Ireland.',
     },
     {
       question: 'What\'s the difference between "here" and "there"?',
       answer:
-        "Here refers to where the speaker is whereas there refers to a the place where the listener or another person is.",
+        'Here refers to where the speaker is whereas there refers to a the place where the listener or another person is.',
     },
     {
       question: 'What\'s the difference between "this" and "that"?',
       answer:
-        "This refers to someone/something near in place/time and that is used to point out something.",
+        'This refers to someone/something near in place/time and that is used to point out something.',
     },
   ],
 };

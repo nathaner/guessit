@@ -1,18 +1,26 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState } from 'react';
 
-import Layout from "./Layout";
+import Layout from './Layout';
 
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import PageHeading from "./common/PageHeading";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
+import PageHeading from './common/PageHeading';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function NewQuestions() {
   const [numberOfQuestions, setNumberOfQuestions] = useState(1);
 
   return (
     <Layout>
+      <Box my={3}>
+        <Link component={RouterLink} to="/questions">
+          <ArrowBackIcon /> Cancel and go back to questions sets
+        </Link>
+      </Box>
       <PageHeading>New questions set</PageHeading>
       <form noValidate>
         <Grid container spacing={2}>
@@ -35,7 +43,7 @@ export default function NewQuestions() {
                 <TextField
                   variant="outlined"
                   margin="normal"
-                  required={questionIndex == 0}
+                  required={questionIndex === 0}
                   fullWidth
                   name={`question${questionIndex + 1}`}
                   label={`Question ${questionIndex + 1}`}
@@ -46,7 +54,7 @@ export default function NewQuestions() {
                 <TextField
                   variant="outlined"
                   margin="normal"
-                  required={questionIndex == 0}
+                  required={questionIndex === 0}
                   fullWidth
                   name={`answer${questionIndex + 1}`}
                   label={`Answer ${questionIndex + 1}`}
