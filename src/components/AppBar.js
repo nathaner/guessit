@@ -1,13 +1,12 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Container from "@material-ui/core/Container";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import TemporaryDrawer from './Nav';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,14 +33,7 @@ export default function MyAppBar() {
                 <img src="/logo.svg" alt="" />
               </Link>
             </Typography>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
+            <TemporaryDrawer />
           </Toolbar>
         </Container>
       </AppBar>

@@ -1,30 +1,31 @@
-import React, { Fragment } from "react";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import { Typography } from "@material-ui/core";
-import Paper from "@material-ui/core/Paper";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Footer from "./Footer";
-import Logo from "./Logo";
-import { Link as RouterLink } from "react-router-dom";
-import ButtonSuccess from "./common/ButtonSuccess";
+import React, { Fragment } from 'react';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import { Typography } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Footer from './Footer';
+import Nav from './Nav';
+import Logo from './Logo';
+import { Link as RouterLink } from 'react-router-dom';
+import ButtonSuccess from './common/ButtonSuccess';
 
 // import Nav from "./Nav";
 
 const useStyles = makeStyles((theme) => ({
   moto: {
-    boxShadow: "inset 0px 4px 4px rgba(0, 0, 0, 0.25)",
-    color: "white",
-    textAlign: "center",
+    boxShadow: 'inset 0px 4px 4px rgba(0, 0, 0, 0.25)',
+    color: 'white',
+    textAlign: 'center',
     padding: theme.spacing(6, 0),
     marginBottom: theme.spacing(3),
     backgroundColor: theme.palette.primary.main,
-    transform: "skewY(-1.22deg)",
+    transform: 'skewY(-1.22deg)',
   },
   motoText: {
-    transform: "skewY(1.22deg)",
+    transform: 'skewY(1.22deg)',
   },
   paper: {
     margin: theme.spacing(2, 0),
@@ -38,6 +39,7 @@ export default function Home() {
   const classes = useStyles();
   return (
     <Fragment>
+      <Nav />
       <Logo />
       <Box className={classes.moto}>
         <Typography className={classes.motoText} variant="h2">
