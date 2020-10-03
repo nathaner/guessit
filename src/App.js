@@ -1,21 +1,22 @@
-import React, { Fragment } from "react";
-import Home from "./components/Home";
-import "./App.css";
-import { Redirect, Route, Switch } from "react-router-dom";
-import { theme } from "./theme";
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
-import Questions from "./components/Questions";
-import NewQuestions from "./components/NewQuestions";
-import QuestionsSet from "./components/QuestionsSet";
-import Sentences from "./components/Sentences";
-import NewSentences from "./components/NewSentences";
-import Pairs from "./components/Pairs";
-import NewPairs from "./components/NewPairs";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import NotFound from "./components/NotFound";
+import React, { Fragment } from 'react';
+import Home from './components/Home';
+import './App.css';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { theme } from './theme';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
+import Questions from './components/Questions';
+import NewQuestions from './components/NewQuestions';
+import QuestionsSet from './components/QuestionsSet';
+import Sentences from './components/Sentences';
+import NewSentences from './components/NewSentences';
+import Pairs from './components/Pairs';
+import NewPairs from './components/NewPairs';
+import Login from './components/Login';
+import Register from './components/Register';
+import About from './components/About';
+import Contact from './components/Contact';
+import NotFound from './components/NotFound';
+import EditQuestionsSet from './components/EditQuestionsSet';
 
 function App() {
   return (
@@ -23,8 +24,9 @@ function App() {
       <CssBaseline />
       <ThemeProvider theme={theme}>
         <Switch>
-          <Route path="/questions/new" component={NewQuestions} />
+          <Route path="/questions/edit/:id" component={EditQuestionsSet} />
           <Route path="/questions/:id" component={QuestionsSet} />
+          <Route path="/questions/new" component={NewQuestions} />
           <Route path="/questions" component={Questions} />
           <Route path="/sentences/new" component={NewSentences} />
           <Route path="/sentences" component={Sentences} />
