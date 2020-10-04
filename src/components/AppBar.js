@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
 import { Link } from 'react-router-dom';
-import TemporaryDrawer from './Nav';
+import Nav from './Nav';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +33,7 @@ export default function MyAppBar() {
                 <img src="/logo.svg" alt="" />
               </Link>
             </Typography>
-            <TemporaryDrawer />
+            <Nav />
           </Toolbar>
         </Container>
       </AppBar>

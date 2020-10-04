@@ -29,9 +29,13 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     margin: theme.spacing(2, 0),
+    padding: theme.spacing(2, 2),
   },
   word: {
     margin: theme.spacing(1),
+  },
+  header: {
+    position: 'relative',
   },
 }));
 
@@ -39,8 +43,10 @@ export default function Home() {
   const classes = useStyles();
   return (
     <Fragment>
-      <Nav />
-      <Logo />
+      <header className={classes.header}>
+        <Nav homePage={true} />
+        <Logo />
+      </header>
       <Box className={classes.moto}>
         <Typography className={classes.motoText} variant="h2">
           The new way to rehearse (for free)

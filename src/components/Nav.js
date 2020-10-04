@@ -17,9 +17,16 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
+
+  homeNav: {
+    backgroud: 'red',
+    position: 'absolute',
+    right: '0px',
+    top: '10px',
+  },
 });
 
-export default function TemporaryDrawer() {
+export default function Nav({ homePage }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -88,7 +95,7 @@ export default function TemporaryDrawer() {
   );
 
   return (
-    <div>
+    <div className={homePage ? classes.homeNav : ''}>
       <IconButton
         edge="start"
         className={classes.menuButton}
