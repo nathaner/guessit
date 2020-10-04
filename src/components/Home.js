@@ -37,6 +37,12 @@ const useStyles = makeStyles((theme) => ({
   header: {
     position: 'relative',
   },
+
+  homeNav: {
+    position: 'absolute',
+    right: '0px',
+    top: '10px',
+  },
 }));
 
 export default function Home() {
@@ -44,7 +50,7 @@ export default function Home() {
   return (
     <Fragment>
       <header className={classes.header}>
-        <Nav homePage={true} />
+        <Nav className={classes.homeNav} />
         <Logo />
       </header>
       <Box className={classes.moto}>

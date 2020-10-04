@@ -17,16 +17,9 @@ const useStyles = makeStyles({
   fullList: {
     width: 'auto',
   },
-
-  homeNav: {
-    backgroud: 'red',
-    position: 'absolute',
-    right: '0px',
-    top: '10px',
-  },
 });
 
-export default function Nav({ homePage }) {
+export default function Nav({ className }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -95,7 +88,7 @@ export default function Nav({ homePage }) {
   );
 
   return (
-    <div className={homePage ? classes.homeNav : ''}>
+    <div className={className}>
       <IconButton
         edge="start"
         className={classes.menuButton}
