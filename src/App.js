@@ -25,8 +25,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <Switch>
           <Route path="/questions/edit/:id" component={EditQuestionsSet} />
-          <Route path="/questions/:id" component={QuestionsSet} />
           <Route path="/questions/new" component={NewQuestions} />
+          <Route path="/questions/:id" component={QuestionsSet} />
           <Route path="/questions" component={Questions} />
           <Route path="/sentences/new" component={NewSentences} />
           <Route path="/sentences" component={Sentences} />
