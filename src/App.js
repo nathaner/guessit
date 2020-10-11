@@ -11,6 +11,7 @@ import Sentences from './components/Sentences';
 import NewSentences from './components/NewSentences';
 import Pairs from './components/Pairs';
 import NewPairs from './components/NewPairs';
+import Profile from './components/Profile';
 import Login from './components/Login';
 import Register from './components/Register';
 import About from './components/About';
@@ -34,6 +35,7 @@ function App() {
           <Route path="/pairs" component={Pairs} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/profile" component={Profile} />
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />
           <Route path="/not-found" component={NotFound} />

@@ -48,6 +48,8 @@ export default function Nav({ className }) {
   const secondMenu = [
     { text: 'Login', href: '/login' },
     { text: 'Register', href: '/register' },
+    { text: 'Profile', href: '/profile' },
+    { text: 'Logout', href: '/' },
   ];
 
   const list = (anchor) => (
