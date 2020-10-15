@@ -3,6 +3,7 @@ import Box from "@material-ui/core/Box";
 import React, { useEffect, useState } from "react";
 import { getSentencesSet } from "../services/sentencesSetsService";
 import Layout from "./Layout";
+import ButtonSuccess from "./common/ButtonSuccess";
 
 function shuffle(array) {
     var currentIndex = array.length,
@@ -43,11 +44,17 @@ export default function SentencesSet({ match }) {
 
     const handleClick = (word) => {
         if (word.position === numberOfClicks) {
-            console.log("correct");
             setNumberOfClicks((numberOfClicks) => numberOfClicks + 1);
+            const newSentences = [...sentences];
+            const index = newSentences[currentPage].indexOf(word);
+            newSentences[currentPage][index].correct = true;
+            setSentence(newSentences);
         } else {
-            console.log("wrong");
             setNumberOfClicks(0);
+            const newSentences = [...sentences];
+            const index = newSentences[currentPage].indexOf(word);
+            newSentences[currentPage].forEach((word) => (word.correct = false));
+            setSentence(newSentences);
         }
     };
 
@@ -63,7 +70,13 @@ export default function SentencesSet({ match }) {
 
             {sentences[0].map((w) => (
                 <Box m={2} key={w.text} onClick={() => handleClick(w)}>
-                    <Button variant="contained">{w.text}</Button>
+                    {w.correct ? (
+                        <ButtonSuccess variant="contained">
+                            {w.text}
+                        </ButtonSuccess>
+                    ) : (
+                        <Button variant="contained">{w.text}</Button>
+                    )}
                 </Box>
             ))}
         </Layout>
