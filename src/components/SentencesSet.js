@@ -1,3 +1,5 @@
+import Button from "@material-ui/core/Button";
+import Box from "@material-ui/core/Box";
 import React, { useEffect, useState } from "react";
 import { getSentencesSet } from "../services/sentencesSetsService";
 import Layout from "./Layout";
@@ -25,20 +27,29 @@ function shuffle(array) {
 export default function SentencesSet({ match }) {
     const [sentences, setSentence] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [numberOfClicks, setNumberOfClicks] = useState(0);
 
     useEffect(() => {
         async function fetchData() {
-            const s = getSentencesSet(match.params.id);
-            const s_array = [];
-
-            s.sentences.forEach((s_) => s_array.push(shuffle(s_.split(" "))));
-            console.log(s_array);
-            await setSentence(s_array);
+            const s = await getSentencesSet(match.params.id);
+            setSentence(s.sentences);
+            console.log(s);
             setIsLoaded(true);
         }
 
         fetchData();
     }, [match.params.id]);
+
+    const handleClick = (word) => {
+        if (word.position === numberOfClicks) {
+            console.log("correct");
+            setNumberOfClicks((numberOfClicks) => numberOfClicks + 1);
+        } else {
+            console.log("wrong");
+            setNumberOfClicks(0);
+        }
+    };
 
     if (!isLoaded)
         return (
@@ -50,8 +61,10 @@ export default function SentencesSet({ match }) {
         <Layout>
             <h1>Hi</h1>
 
-            {sentences.map((s) => (
-                <p key={s.join(" ")}>{s.join(" ")}</p>
+            {sentences[0].map((w) => (
+                <Box m={2} key={w.text} onClick={() => handleClick(w)}>
+                    <Button variant="contained">{w.text}</Button>
+                </Box>
             ))}
         </Layout>
     );
