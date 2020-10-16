@@ -19,6 +19,7 @@ import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 import EditQuestionsSet from "./components/EditQuestionsSet";
 import SentencesSet from "./components/SentencesSet";
+import ForgotPassword from "./components/ForgotPassword";
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/pairs" component={Pairs} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
+                    <Route path="/forgot-password" component={ForgotPassword} />
                     <Route path="/profile" component={Profile} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/about" component={About} />

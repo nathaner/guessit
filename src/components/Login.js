@@ -13,57 +13,67 @@ import Layout from "./Layout";
 import PageHeading from "./common/PageHeading";
 
 export default function Login() {
-  return (
-    <Layout>
-      <Container component="main" maxWidth="xs">
-        <div>
-          <PageHeading>Sign in</PageHeading>
-          <form noValidate>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button type="submit" fullWidth variant="contained" color="primary">
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link component={RouterLink} to="/register">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link component={RouterLink} to="/register">
-                  Don't have an account? Sign Up
-                </Link>
-              </Grid>
-            </Grid>
-          </form>
-        </div>
-        <Box mt={8}></Box>
-      </Container>
-    </Layout>
-  );
+    return (
+        <Layout>
+            <Container component="main" maxWidth="xs">
+                <div>
+                    <PageHeading>Sign in</PageHeading>
+                    <form noValidate>
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="email"
+                            label="Email Address"
+                            name="email"
+                            autoComplete="email"
+                            autoFocus
+                        />
+                        <TextField
+                            variant="outlined"
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                        />
+                        <FormControlLabel
+                            control={
+                                <Checkbox value="remember" color="primary" />
+                            }
+                            label="Remember me"
+                        />
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                        >
+                            Sign In
+                        </Button>
+                        <Grid container>
+                            <Grid item xs>
+                                <Link
+                                    component={RouterLink}
+                                    to="/forgot-password"
+                                >
+                                    Forgot password?
+                                </Link>
+                            </Grid>
+                            <Grid item>
+                                <Link component={RouterLink} to="/register">
+                                    Don't have an account? Sign Up
+                                </Link>
+                            </Grid>
+                        </Grid>
+                    </form>
+                </div>
+                <Box mt={8}></Box>
+            </Container>
+        </Layout>
+    );
 }
