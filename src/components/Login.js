@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import Container from "@material-ui/core/Container";
@@ -12,13 +12,43 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Layout from "./Layout";
 import PageHeading from "./common/PageHeading";
 
-export default function Login() {
+import auth from "../services/authService"
+
+export default function Login({location}) {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    const [input, setInput] = useState({})
+
+    const handleInputChange = (e) => setInput({
+        ...input,
+        [e.currentTarget.name]: e.currentTarget.value
+    })
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        doSubmit();
+    }
+
+    const doSubmit = () => {
+        try {
+            auth.login(input.email, input.password);
+            const { state } = location;
+            window.location = state ? state.from.pathname : "/"
+        } catch (error) {
+            
+        }
+    }
+
+
     return (
         <Layout>
             <Container component="main" maxWidth="xs">
                 <div>
                     <PageHeading>Sign in</PageHeading>
-                    <form noValidate>
+                    <form noValidate onSubmit={handleSubmit}>
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -29,6 +59,7 @@ export default function Login() {
                             name="email"
                             autoComplete="email"
                             autoFocus
+                            onChange={handleInputChange}
                         />
                         <TextField
                             variant="outlined"
@@ -40,6 +71,7 @@ export default function Login() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={handleInputChange}
                         />
                         <FormControlLabel
                             control={

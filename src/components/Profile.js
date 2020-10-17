@@ -22,8 +22,8 @@ export default function Profile() {
 
   useEffect(() => {
     async function fetchData() {
-      await setSentencesSet(getSentencesSetsFromAuthor('Sarah'));
-      await setQuestionsSets(getQuestionsSetsFromAuthor('Sarah'));
+      // await setSentencesSet(getSentencesSetsFromAuthor('Sarah'));
+      // await setQuestionsSets(getQuestionsSetsFromAuthor('Sarah'));
       setIsLoaded(true);
     }
 

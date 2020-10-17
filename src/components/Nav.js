@@ -34,7 +34,7 @@ export default function Nav({ className }) {
   const [user, setUser] = useState({})
 
   useEffect(() => {
-    setUser(auth.login())
+    setUser(auth.getCurrentUser())
   }, [])
 
   const toggleDrawer = (anchor, open) => (event) => {
