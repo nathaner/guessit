@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Home from "./components/Home";
 import "./App.css";
 import { Redirect, Route, Switch } from "react-router-dom";
@@ -20,8 +20,19 @@ import NotFound from "./components/NotFound";
 import EditQuestionsSet from "./components/EditQuestionsSet";
 import SentencesSet from "./components/SentencesSet";
 import ForgotPassword from "./components/ForgotPassword";
+import Logout from "./components/Logout";
+import auth from "./services/authService";
 
 function App() {
+    const [user, setUser] = useState({})
+
+    useEffect(() => {
+        setUser(auth.getCurrentUser());
+
+
+    }, [])
+
+
     return (
         <Fragment>
             <CssBaseline />
@@ -42,6 +53,7 @@ function App() {
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
                     <Route path="/forgot-password" component={ForgotPassword} />
+                    <Route path="/logout" component={Logout} />
                     <Route path="/profile" component={Profile} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/about" component={About} />

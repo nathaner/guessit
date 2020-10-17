@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,6 +9,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import auth from '../services/authService';
+
+
 
 const useStyles = makeStyles({
   list: {
@@ -21,12 +24,18 @@ const useStyles = makeStyles({
 
 export default function Nav({ className }) {
   const classes = useStyles();
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     top: false,
     left: false,
     bottom: false,
     right: false,
   });
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    setUser(auth.login())
+  }, [])
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -45,12 +54,19 @@ export default function Nav({ className }) {
     { text: 'Sentences', href: '/sentences' },
   ];
 
-  const secondMenu = [
-    { text: 'Login', href: '/login' },
-    { text: 'Register', href: '/register' },
-    { text: 'Profile', href: '/profile' },
-    { text: 'Logout', href: '/' },
-  ];
+  let secondMenu;
+
+  if (user) {
+    secondMenu = [
+      { text: 'Profile', href: '/profile' },
+      { text: 'Logout', href: '/logout' },
+    ]
+  } else {
+    secondMenu = [
+      { text: 'Login', href: '/login' },
+      { text: 'Register', href: '/register' },
+    ];
+  }
 
   const list = (anchor) => (
     <div

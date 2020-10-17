@@ -178,3 +178,7 @@ export function getQuestionsSet(id) {
     (questionsSet) => questionsSet._id === parseInt(id, 10)
   );
 }
+
+export function getQuestionsSetsFromAuthor(author) {
+  return questionsSets.filter((set) => set.author === author);
+}
